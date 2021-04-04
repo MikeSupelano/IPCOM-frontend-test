@@ -18,6 +18,9 @@ export default new Vuex.Store({
     },
     UPDATE_LIGAS (state, ligas){
       state.ligas = ligas;
+    },
+    UPDATE_EQUIPOS (state, equipos){
+      state.equipos = equipos;
     }
   },
   actions: {
@@ -28,7 +31,8 @@ export default new Vuex.Store({
           const response = data.data;
           if(response.length>0){
             commit('UPDATE_PARTIDOS', response);
-            dispatch('getLigas', response)
+            dispatch('getLigas', response);
+            dispatch('getEquipos', response);
           } 
         })
         .catch(err => {
@@ -51,6 +55,16 @@ export default new Vuex.Store({
       });
 
       commit('UPDATE_LIGAS', ligas_unicas);
+    },
+    getEquipos({commit}, data){
+      const equipos_total = data.reduce((equipos, partido) => 
+      (
+        [...equipos, partido.side1.name, partido.side2.name]
+      ), []);
+
+      const equipos_unicos = [...new Set(equipos_total)];
+
+      commit('UPDATE_EQUIPOS', equipos_unicos);
     }
   },
   getters: {
