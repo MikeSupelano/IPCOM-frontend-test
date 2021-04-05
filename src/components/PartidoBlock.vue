@@ -1,9 +1,9 @@
 <template>
-  <div class="thumbnail"></div>  
+  <div class="partido"></div>  
 </template>
 <script>
 export default {
-  name: "Thumbnail",
+  name: "Partido",
   props: ["partido"]
 }
 </script>

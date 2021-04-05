@@ -11,12 +11,44 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/ligas/',
+    name: 'Ligas',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "ligas" */ '../views/Lista.vue')
+  },
+  {
+    path: '/ligas/:idLiga',
+    name: 'Liga',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "liga" */ '../views/Detalle.vue')
+  },
+  {
+    path: '/equipos/',
+    name: 'Equipos',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "equipos" */ '../views/Lista.vue')
+  },
+  {
+    path: '/equipos/:idEquipo',
+    name: 'Equipo',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "equipo" */ '../views/Detalle.vue')
+  },
+  {
+    path: '/partido/:idPartido',
+    name: 'Partido',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "partido" */ '../views/Partido.vue')
   }
 ]
 
