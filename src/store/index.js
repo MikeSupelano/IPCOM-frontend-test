@@ -73,5 +73,18 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    getPartidos : state => state.partidos,
+    getPartidosByLigaId : state => idLiga => state.partidos.filter(partido => partido.competition.id === idLiga),
+    getEquipoById : state => idEquipo => {
+      console.log(idEquipo)
+      return state.equipos.filter(equipo => equipo.id === idEquipo)
+    },
+    getPartidosByEquipoId : (state,getters) => idEquipo => {
+      console.log(idEquipo);
+      let nameEquipo = getters.getEquipoById(idEquipo).name;
+      console.log(nameEquipo);
+      state.partidos.filter(partido => partido.side1.name === nameEquipo || partido.side2.name === nameEquipo)
+    }
+
   }
 })

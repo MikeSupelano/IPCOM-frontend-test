@@ -21,7 +21,7 @@ export default {
   min-height:100vh;
   &__hero{
     padding:2rem 0;
-    border-bottom:1px solid lightgrey;
+    border-bottom:1px solid grey;
   }
 }
 </style>

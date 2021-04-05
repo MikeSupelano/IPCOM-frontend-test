@@ -19,7 +19,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "ligas" */ '../views/Lista.vue')
   },
   {
-    path: '/ligas/:idLiga',
+    path: '/ligas/:id',
     name: 'Liga',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -35,7 +35,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "equipos" */ '../views/Lista.vue')
   },
   {
-    path: '/equipos/:idEquipo',
+    path: '/equipos/:id',
     name: 'Equipo',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -43,7 +43,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "equipo" */ '../views/Detalle.vue')
   },
   {
-    path: '/partido/:idPartido',
+    path: '/partido/:id',
     name: 'Partido',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
