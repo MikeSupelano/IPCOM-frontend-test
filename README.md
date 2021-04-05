@@ -1,8 +1,6 @@
 # ipcom-frontend-test
 
 ## Prueba frontend IPCOM
-```
-
 Esta aplicación cumple con los siguientes requerimientos:
 Hacer una pagina que cargue en la primera pantalla  5 partidos aleatorios (utilice para la presentación el elemento thumbnail). 
 Debe tener un menú (puede ser un select o un link) donde aparezcan listadas todas las ligas (elemento competition del JSON). 
@@ -12,7 +10,7 @@ Hacer un menú para los equipos también donde cuando se seleccione un equipo mu
 Se pueden utilizar los select en el área superior para seleccionar una liga o equipo y filtrar los resultados mostrados, tambien se puede dar click al texto 'ScoreBatViewer' para regresar al homepage.
 
 Para desplegar es necesario clonar el repositorio y ejecutar npm run serve o build.
-```
+
 
 ## Project setup
 ```
