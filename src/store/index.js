@@ -64,7 +64,12 @@ export default new Vuex.Store({
 
       const equipos_unicos = [...new Set(equipos_total)];
 
-      commit('UPDATE_EQUIPOS', equipos_unicos);
+      const eq_objetos = equipos_unicos.map((n, index) => ({
+          name: n,
+          id: index
+      }));
+
+      commit('UPDATE_EQUIPOS', eq_objetos);
     }
   },
   getters: {
