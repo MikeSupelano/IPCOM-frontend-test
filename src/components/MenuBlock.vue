@@ -20,7 +20,13 @@ export default {
   methods: {
     handleMenu(e){
       const selectedId = e.target.value;
-      const newRoute = '/'+this.title.toLowerCase()+'/'+selectedId;
+      let newRoute = '';
+      if(selectedId === '/'){
+        newRoute = '/'+this.title.toLowerCase()+'/';
+      }else{
+        newRoute = '/'+this.title.toLowerCase()+'/'+selectedId;
+      }
+       
       this.$router.push({path: newRoute});
     }
   },
