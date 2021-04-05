@@ -30,7 +30,8 @@ export default new Vuex.Store({
         .then(data => {
           const response = data.data;
           if(response.length>0){
-            commit('UPDATE_PARTIDOS', response);
+            let partidos = response.map( (obj, index) => ({ ...obj, id: index}))
+            commit('UPDATE_PARTIDOS', partidos);
             dispatch('getLigas', response);
             dispatch('getEquipos', response);
           } 
