@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/ligas">Ligas</router-link> |
-      <router-link to="/equipos">Equipos</router-link>
-    </div>
+    <nav-block></nav-block>
     <router-view/>
   </div>
 </template>
 <script>
-import { mapActions } from "vuex";
+import NavBlock from './components/NavBlock.vue';
+import { mapActions} from "vuex";
+
 export default {
   name: "ScoreBatViewer",
+  components: { NavBlock },
   methods: {
     ...mapActions(["initialize"]),
   },
