@@ -81,6 +81,7 @@ export default new Vuex.Store({
       let nameEquipo = getters.getEquipoById(idEquipo).name;
       return state.partidos.filter(partido => partido.side1.name == nameEquipo || partido.side2.name == nameEquipo)
     },
-    getLigaById : (state) => (idLiga) => state.ligas.find(liga => liga.id == idLiga)
+    getLigaById : (state) => (idLiga) => state.ligas.find(liga => liga.id == idLiga),
+    getPartidoById : (state) => (idPartido) => state.partidos.filter(partido => partido.id == idPartido)[0]
   }
 })

@@ -1,14 +1,30 @@
 <template>
   <main class="partido-view">
-    <h1>This is a partido page</h1>
+    <partido-block
+      :partido="partido">
+    </partido-block>
   </main>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import PartidoBlock from '../components/PartidoBlock.vue';
 export default {
   name: 'PartidoView',
   components: {
-  }
+    PartidoBlock
+  },
+  computed: {
+    ...mapGetters([
+      "getPartidoById",
+      ]),
+    idRuta(){
+      return this.$route.params.id || '';
+    },
+    partido(){
+      return this.getPartidoById(this.idRuta);
+    }
+  },
 }
 </script>
 
