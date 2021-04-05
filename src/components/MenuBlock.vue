@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <h1 class="menu-title">{{ title }}</h1>
-    <select name="" class="menu-selector" @change="handleMenu">
+    <select name="" class="menu__selector" @change="handleMenu">
       <option value="/">Selecciona un{{ tipoSeleccion }} </option>
       <option
         v-for="(item, index) in (listaSelect)"
@@ -10,7 +10,7 @@
         {{ item.name }}
       </option>
     </select>
-    <router-link class="menu-link" :to="{name: title}">Ver todos</router-link>
+    <router-link class="menu__link" :to="{name: title}">Ver todos</router-link>
   </div>  
 </template>
 <script>
@@ -31,4 +31,30 @@ export default {
   },
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.menu{
+  display:flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding:1rem;
+  &__selector{
+    margin:3px 0;
+    font-family: 'Montserrat';
+    font-size: 12px;
+  }
+  &__link{
+    margin-top:3px;
+    color:black;
+    &:visited{
+      color: black;
+    }
+  }
+}
+@media screen and (min-width:900px) {
+  .menu{
+    &__selector{
+      font-size:16px;
+    }
+  }
+}
+</style>
