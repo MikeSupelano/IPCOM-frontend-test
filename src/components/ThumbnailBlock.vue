@@ -5,7 +5,7 @@
       <h2 class="thumbnail__title">
         {{ title }}
       </h2>
-      <p class="thumbail__date">{{ clearDate }}</p>
+      <p class="thumbnail__date">{{ clearDate }}</p>
     </div>  
   </router-link>
 </template>
@@ -26,15 +26,27 @@ export default {
 </script>
 <style lang="scss">
 .thumbnail{
-  background-color: gray;
-  padding:5%;
+  background-color: white;
   border-radius:5px;
   overflow: hidden;
   min-height: 100%;
+  display: flex;
+  flex-direction:column;
+  box-shadow: 2px 6px 16px 0px rgba(0,0,0,0.67);
   &__img{
     display: block;
     max-width: 100%;
     min-height: 183px;
+  }
+  &__title{
+    background-color: white;
+    padding:5%;
+    margin:0;
+    margin-top:auto;
+  }
+  &__date {
+    background-color: white;
+    padding:5%;
   }
 }
 </style>

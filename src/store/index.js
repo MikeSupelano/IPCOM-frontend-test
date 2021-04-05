@@ -75,6 +75,8 @@ export default new Vuex.Store({
   },
   getters: {
     getPartidos : state => state.partidos,
+    getLigas : state => state.ligas,
+    getEquipos : state => state.equipos,
     getPartidosByLigaId : state => (idLiga) => state.partidos.filter(partido => partido.competition.id == idLiga),
     getEquipoById : state => idEquipo => state.equipos.filter(equipo => equipo.id == idEquipo)[0],
     getPartidosByEquipoId : (state,getters) => idEquipo => {

@@ -65,7 +65,7 @@ export default {
   align-items: center;
   justify-content:space-around;
   flex-direction:column;
-  & * + *{
+  & > * + *{
     margin-top:1rem;
   }
   a{
@@ -81,7 +81,7 @@ export default {
   .grid-partidos{
     flex-direction: row;
     flex-wrap:wrap;
-    & * + * {
+    & > * + * {
       margin-left:1rem;
     }
     &__partido{
